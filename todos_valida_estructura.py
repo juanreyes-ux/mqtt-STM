@@ -122,11 +122,14 @@ client.connect("broker-stm-preprod.apps.ocp4-prod.imm.gub.uy", 1883, 60)
 # Iniciar el bucle de red
 client.loop_start()
 
-try:
-    while True:
-        pass  # Mantener el script en ejecución
-except KeyboardInterrupt:
-    print("\nInterrumpido por el usuario")
-finally:
-    client.loop_stop()
-    client.disconnect()
+# Iniciar el bucle de red
+if __name__ == '__main__':
+    client.loop_start()
+    try:
+        while True:
+            pass  # Mantener el script en ejecución
+    except KeyboardInterrupt:
+        print("\nInterrumpido por el usuario")
+    finally:
+        client.loop_stop()
+        client.disconnect()
