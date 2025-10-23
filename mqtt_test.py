@@ -7,8 +7,8 @@ def on_connect(client, userdata, flags, rc):
     # Suscribirse a todos los tópicos
     #client.subscribe("#", qos=2)
 
-    # Suscribirse a los tópicos que comienzan con STMBuses/
-    client.subscribe("STMBuses/#", qos=2)
+    # Suscribirse a los tópicos que comienzan con STMBuses/50/857
+    client.subscribe("STMBuses/50/857", qos=2)
 
 # Lista para almacenar mensajes JSON recibidos
 mensajes_recibidos = []
@@ -80,8 +80,8 @@ try:
         pass  # Mantener el script en ejecución
 except KeyboardInterrupt:
     print("Interrumpido por el usuario")
-    #print("Mensajes recibidos:")
-    #print(json.dumps(mensajes_recibidos, indent=4))  # Imprimir en formato JSON
+    print("Mensajes recibidos:")
+    print(json.dumps(mensajes_recibidos, indent=4))  # Imprimir en formato JSON
     # Comparar los mensajes recibidos con el JSON esperado
     comparar_mensajes(json_esperado, mensajes_recibidos)
 finally:
