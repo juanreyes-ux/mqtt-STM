@@ -27,7 +27,7 @@ args = parser.parse_args()
 ocupacion_buses = {}
 
 # Tiempo límite en días
-TIEMPO_LIMITE = timedelta(days=6)
+TIEMPO_LIMITE = timedelta(days=7)
 
 # -------------------------------
 # Cliente origen (subscriber)
